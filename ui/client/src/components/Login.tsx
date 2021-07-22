@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import {LoginDTO} from "../dtos/LoginDTO";
 import {loginApiCall} from "../remotes/login-api-call";
-import {useDispatch} from "react-redux";
-import {login} from "../states/auth-slice";
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -23,7 +21,10 @@ const Login = () => {
         let token = '';
         let id = 0;
         let credentials: LoginDTO = { username, password};
-        loginApiCall(credentials).then(data => console.log(data));
+        loginApiCall(credentials).then(data =>
+        {
+            console.log(data)
+        });
         // dispatch(login(data));
     }
     return (
