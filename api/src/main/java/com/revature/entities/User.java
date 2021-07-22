@@ -1,49 +1,39 @@
-package com.revature.entities;
+package main.java.com.revature.entities;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "users")
 public class User
 {
-    @Column
-    private String name;
-
-    @Column
-    private String email;
-
     @Id
     @GeneratedValue
     private int id;
+
+    @Column
+    private String username;
+
+    @Column
+    private String password;
 
     public User()
     {
     }
 
-    public User(String name, String email, int id)
+    public User(String username, int id, String password)
     {
-        this.name = name;
-        this.email = email;
+        this.username = username;
         this.id = id;
+        this.password = password;
     }
 
-    public String getName()
+    public String getUsername()
     {
-        return name;
+        return username;
     }
 
-    public void setName(String name)
+    public void setUsername(String name)
     {
-        this.name = name;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
+        this.username = name;
     }
 
     public int getId()
@@ -56,12 +46,21 @@ public class User
         this.id = id;
     }
 
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
     @Override
     public String toString()
     {
         return "User{" +
-                       "name='" + name + '\'' +
-                       ", email='" + email + '\'' +
+                       "name='" + username + '\'' +
                        ", id=" + id +
                        '}';
     }
