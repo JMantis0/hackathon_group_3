@@ -1,10 +1,10 @@
-package main.java.com.revature.controllers;
+package com.revature.controllers;
 
-import main.java.com.revature.dtos.LoginDTO;
-import main.java.com.revature.entities.User;
-import main.java.com.revature.exceptions.AuthorizationFailedException;
-import main.java.com.revature.services.AuthService;
-import main.java.com.revature.utilities.JWTUtility;
+import com.revature.dtos.LoginDTO;
+import com.revature.entities.User;
+import com.revature.exceptions.AuthorizationFailedException;
+import com.revature.services.AuthService;
+import com.revature.utilities.JWTUtility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;

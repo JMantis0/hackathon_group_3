@@ -1,8 +1,8 @@
-package main.java.com.revature.services;
+package com.revature.services;
 
 
-import main.java.com.revature.entities.Character;
-import main.java.com.revature.repos.CharacterRepository;
+import com.revature.entities.CharacterEntity;
+import com.revature.repos.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class CharacterService {
     public CharacterService(CharacterRepository characterRepository){
         this.characterRepository = characterRepository;
     }
-    public Character saveCharacter(Character character){
-        return characterRepository.save(character);
+    public CharacterEntity saveCharacter(CharacterEntity characterEntity){
+        return characterRepository.save(characterEntity);
     }
 }

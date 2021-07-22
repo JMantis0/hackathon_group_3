@@ -1,11 +1,11 @@
-package main.java.com.revature.repos;
+package com.revature.repos;
 
 
-import main.java.com.revature.entities.Character;
+import com.revature.entities.CharacterEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CharacterRepository extends JpaRepository<Character, Integer> {
+public interface CharacterRepository extends JpaRepository<CharacterEntity, Integer> {
 
 }

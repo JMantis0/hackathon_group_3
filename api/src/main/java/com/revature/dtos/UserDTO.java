@@ -1,4 +1,4 @@
-package main.java.com.revature.dtos;
+package com.revature.dtos;
 
 public class UserDTO
 {

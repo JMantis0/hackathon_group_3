@@ -1,10 +1,10 @@
-package main.java.com.revature.services;
+package com.revature.services;
 
-import main.java.com.revature.dtos.LoginDTO;
-import main.java.com.revature.entities.User;
-import main.java.com.revature.exceptions.UserNotFoundException;
-import main.java.com.revature.repos.UserRepository;
-import main.java.com.revature.utilities.JWTUtility;
+import com.revature.dtos.LoginDTO;
+import com.revature.entities.User;
+import com.revature.exceptions.UserNotFoundException;
+import com.revature.repos.UserRepository;
+import com.revature.utilities.JWTUtility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

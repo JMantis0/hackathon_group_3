@@ -1,8 +1,7 @@
-package main.java.com.revature.controllers;
+package com.revature.controllers;
 
-
-import main.java.com.revature.entities.Character;
-import main.java.com.revature.services.CharacterService;
+import com.revature.entities.CharacterEntity;
+import com.revature.services.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +17,7 @@ public class CharacterController {
     }
 
     @PostMapping("/add")
-    public Character addCharacter(@RequestBody Character character){
-        return this.characterService.saveCharacter(character);
+    public CharacterEntity addCharacter(@RequestBody CharacterEntity characterEntity){
+        return this.characterService.saveCharacter(characterEntity);
     }
 }
