@@ -87,11 +87,10 @@ application.yml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-<<<<<<< HEAD
 
-package.json
+
+#package.json
 package-lock.json
 tsconfig.json
 /ui/client/node_modules/
-=======
->>>>>>> 13d01de1e0943d24337db17a8ff8ad18903cd864
+
