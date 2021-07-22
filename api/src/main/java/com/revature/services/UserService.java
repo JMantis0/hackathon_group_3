@@ -1,3 +1,4 @@
+
 package com.revature.services;
 
 import com.revature.entities.User;
@@ -22,7 +23,9 @@ public class UserService
     {
         return userRepository.save(user);
     }
+
     public Optional<User> findById(int id){
         return userRepository.findById(id);
     }
 }
+

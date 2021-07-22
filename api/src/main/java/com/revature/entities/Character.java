@@ -13,7 +13,7 @@ public class Character {
     private User user;
 
     private String name;
-    private String description;
+    private double luck;
     private double strength;
     private double speed;
     private double health;
@@ -23,12 +23,11 @@ public class Character {
     private double height;
     private double weight;
 
-    public Character(){}
-    public Character(String name, String description, double strength, double speed, double health, double armor,
-                     double magic_damage, double physical_damage, double height, double weight) {
+    public Character(String name, double luck, double strength, double speed, double health, double armor,
+                     double magic_damage, double physical_damage, double height, double weight, User user) {
 
         this.name = name;
-        this.description = description;
+        this.luck = luck;
         this.strength = strength;
         this.speed = speed;
         this.health = health;
@@ -39,6 +38,9 @@ public class Character {
         this.weight = weight;
     }
 
+    public Character() {
+    }
+
     public String getName() {
         return name;
     }
@@ -47,13 +49,9 @@ public class Character {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
+    public double getLuck() { return luck; }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public void setLuck(double luck) { this.luck = luck; }
 
     public double getStrength() {
         return strength;
@@ -127,11 +125,21 @@ public class Character {
         this.weight = weight;
     }
 
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
+
+    public User getUser() { return user; }
+
+    public void setUser(User user) { this.user = user; }
+
     @Override
     public String toString() {
         return "Character{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                "id=" + id +
+                ", user=" + user +
+                ", name='" + name + '\'' +
+                ", luck=" + luck +
                 ", strength=" + strength +
                 ", speed=" + speed +
                 ", health=" + health +

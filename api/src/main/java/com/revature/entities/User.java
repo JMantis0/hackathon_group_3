@@ -1,7 +1,5 @@
 package com.revature.entities;
 
-import org.springframework.boot.context.properties.bind.Name;
-
 import javax.persistence.*;
 
 @Entity
@@ -66,9 +64,9 @@ public class User
     public String toString()
     {
         return "User{" +
-                       "name='" + name + '\'' +
-                       ", email='" + email + '\'' +
-                       ", id=" + id +
-                       '}';
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
