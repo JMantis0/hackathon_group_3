@@ -1,6 +1,6 @@
 package com.revature.controllers;
 
-import com.revature.entities.Character;
+import com.revature.entities.CharacterEntity;
 import com.revature.services.CharacterService;
 import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +20,13 @@ public class CharacterController {
         this.userService = userService;
     }
 
-    @PostMapping("/add/{id}")
-    public Character addCharacter(@RequestBody Character character, @PathVariable int id){
-
-        character.setUser(userService.findById(id).get());
-        return characterService.saveCharacter(character);
+    @PostMapping("/add")
+    public CharacterEntity addCharacter(@RequestBody CharacterEntity characterEntity) {
+        return this.characterService.saveCharacter(characterEntity);
     }
 
     @GetMapping("/user/{id}")
-    public List<Character> findByUserId(@PathVariable int id){
+    public List<CharacterEntity> findByUserId(@PathVariable int id){
         return characterService.findByUserId(id);
     }
 }

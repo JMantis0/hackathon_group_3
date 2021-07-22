@@ -2,19 +2,18 @@ package com.revature.entities;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="Users")
+@Entity(name = "users")
 public class User
 {
-    @Column
-    private String name;
-
-    @Column
-    private String email;
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
+
+    @Column
+    private String username;
+
+    @Column
+    private String password;
 
     public User(){}
     public User(int id)
@@ -23,31 +22,21 @@ public class User
     }
   
 
-    public User(String name, String email, int id)
+    public User(String username, String password, int id)
     {
-        this.name = name;
-        this.email = email;
+        this.username = username;
         this.id = id;
+        this.password = password;
     }
 
-    public String getName()
+    public String getUsername()
     {
-        return name;
+        return username;
     }
 
-    public void setName(String name)
+    public void setUsername(String name)
     {
-        this.name = name;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
+        this.username = name;
     }
 
     public int getId()
@@ -60,13 +49,21 @@ public class User
         this.id = id;
     }
 
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
     @Override
     public String toString()
     {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", id=" + id +
-                '}';
+        return "User{" + "name='" + username + '\'' +
+                       ", id=" + id +
+                       '}';
     }
 }

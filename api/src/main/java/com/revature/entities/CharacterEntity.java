@@ -3,7 +3,7 @@ package com.revature.entities;
 import javax.persistence.*;
 
 @Entity
-public class Character {
+public class CharacterEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
@@ -23,8 +23,8 @@ public class Character {
     private double height;
     private double weight;
 
-    public Character(String name, double luck, double strength, double speed, double health, double armor,
-                     double magic_damage, double physical_damage, double height, double weight, User user) {
+    public CharacterEntity(String name, double luck, double strength, double speed, double health, double armor,
+                           double magic_damage, double physical_damage, double height, double weight, User user) {
 
         this.name = name;
         this.luck = luck;
@@ -38,8 +38,7 @@ public class Character {
         this.weight = weight;
     }
 
-    public Character() {
-    }
+    public CharacterEntity() {}
 
     public String getName() {
         return name;
@@ -129,13 +128,9 @@ public class Character {
 
     public void setId(int id) { this.id = id; }
 
-    public User getUser() { return user; }
-
-    public void setUser(User user) { this.user = user; }
-
     @Override
     public String toString() {
-        return "Character{" +
+        return "CharacterEntity{" +
                 "id=" + id +
                 ", user=" + user +
                 ", name='" + name + '\'' +
