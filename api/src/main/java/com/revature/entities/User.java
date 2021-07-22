@@ -1,7 +1,5 @@
 package com.revature.entities;
 
-import org.springframework.boot.context.properties.bind.Name;
-
 import javax.persistence.*;
 
 @Entity
