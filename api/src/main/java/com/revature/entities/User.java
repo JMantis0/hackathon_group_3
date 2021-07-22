@@ -23,6 +23,7 @@ public class User
     {
         this.id = id;
     }
+  
 
     public User(String name, String email, int id)
     {
@@ -65,9 +66,9 @@ public class User
     public String toString()
     {
         return "User{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", id=" + id +
-                '}';
+                       "name='" + name + '\'' +
+                       ", email='" + email + '\'' +
+                       ", id=" + id +
+                       '}';
     }
 }

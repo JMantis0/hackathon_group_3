@@ -5,6 +5,12 @@ public class UserDTO
     private String name;
     private String email;
 
+    public UserDTO(String name, String email)
+    {
+        this.name = name;
+        this.email = email;
+    }
+
     public String getName()
     {
         return name;
@@ -29,8 +35,8 @@ public class UserDTO
     public String toString()
     {
         return "UserDTO{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                       "name='" + name + '\'' +
+                       ", email='" + email + '\'' +
+                       '}';
     }
 }
