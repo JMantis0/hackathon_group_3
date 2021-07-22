@@ -1,3 +1,4 @@
+
 package main.java.com.revature.repos;
 
 import main.java.com.revature.entities.User;
@@ -11,3 +12,4 @@ public interface UserRepository extends JpaRepository<User, Integer>
 {
     Optional<User> getByUsername(String username);
 }
+

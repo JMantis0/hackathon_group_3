@@ -1,14 +1,47 @@
-# Compiled class file
-*.class
+HELP.md
+.gradle
+build/
+!gradle/wrapper/*
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Log file
-*.log
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+build/*
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
-# BlueJ files
-*.ctxt
+build.gradle
+settings.gradle
+gradlew
+gradlew.bat
+application.properties
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+*.gradle
+### VS Code ###
+.vscode/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+application.yml
 
 # Package Files #
 *.jar
@@ -26,8 +59,12 @@ application.yml
 
 .idea
 
+<<<<<<< HEAD
 
 #UI stuff
+=======
+*.iml
+>>>>>>> 13d01de1e0943d24337db17a8ff8ad18903cd864
 
 # dependencies
 /node_modules
@@ -50,8 +87,11 @@ application.yml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 
 package.json
 package-lock.json
 tsconfig.json
 /ui/client/node_modules/
+=======
+>>>>>>> 13d01de1e0943d24337db17a8ff8ad18903cd864

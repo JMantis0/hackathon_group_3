@@ -1,6 +1,9 @@
 package main.java.com.revature.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity(name = "users")
 public class User
@@ -59,8 +62,7 @@ public class User
     @Override
     public String toString()
     {
-        return "User{" +
-                       "name='" + username + '\'' +
+        return "User{" + "name='" + username + '\'' +
                        ", id=" + id +
                        '}';
     }
