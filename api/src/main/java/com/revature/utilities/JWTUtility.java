@@ -59,7 +59,7 @@ public class JWTUtility
             if(!jwt.getIssuer().equals(ISSUER)) throw new JWTVerificationException("Incorrect issuer");
             Map<String, Claim> claims = jwt.getClaims();
             if (claims.size() < 4) throw new JWTVerificationException("Incorrect claims");
-            User user = new User(claims.get("username").asString(), claims.get("id").asInt(), "");
+            User user = new User(claims.get("username").asString(), "",claims.get("id").asInt());
             logger.info("Authorization succeeded for user: {}", user);
             return Optional.of(user);
         } catch (JWTVerificationException e)

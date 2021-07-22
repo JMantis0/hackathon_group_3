@@ -2,22 +2,31 @@ package com.revature.controllers;
 
 import com.revature.entities.CharacterEntity;
 import com.revature.services.CharacterService;
+import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:4200")
 @RequestMapping("character")
 public class CharacterController {
     private final CharacterService characterService;
-
+    private final UserService userService;
     @Autowired
-    public CharacterController(CharacterService characterService){
+    public CharacterController(CharacterService characterService, UserService userService){
         this.characterService = characterService;
+        this.userService = userService;
     }
 
     @PostMapping("/add")
-    public CharacterEntity addCharacter(@RequestBody CharacterEntity characterEntity){
+    public CharacterEntity addCharacter(@RequestBody CharacterEntity characterEntity) {
         return this.characterService.saveCharacter(characterEntity);
+    }
+
+    @GetMapping("/user/{id}")
+    public List<CharacterEntity> findByUserId(@PathVariable int id){
+        return characterService.findByUserId(id);
     }
 }

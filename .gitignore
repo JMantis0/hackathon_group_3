@@ -25,12 +25,13 @@ build/*
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-
-build.gradle
-settings.gradle
-gradlew
-gradlew.bat
-application.properties
+api/gradle/*
+api/build.gradle
+api/settings.gradle
+api/gradlew
+api/gradlew.bat
+api/build/*
+api/src/main/resources/*
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -59,13 +60,9 @@ application.yml
 
 .idea
 
-<<<<<<< HEAD
+*.iml
 
 #UI stuff
-=======
-*.iml
->>>>>>> 13d01de1e0943d24337db17a8ff8ad18903cd864
-
 # dependencies
 /node_modules
 /.pnp
@@ -87,11 +84,7 @@ application.yml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-<<<<<<< HEAD
 
-package.json
 package-lock.json
 tsconfig.json
 /ui/client/node_modules/
-=======
->>>>>>> 13d01de1e0943d24337db17a8ff8ad18903cd864

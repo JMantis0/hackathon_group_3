@@ -1,15 +1,12 @@
 package com.revature.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "users")
 public class User
 {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
     @Column
@@ -18,11 +15,14 @@ public class User
     @Column
     private String password;
 
-    public User()
+    public User(){}
+    public User(int id)
     {
+        this.id = id;
     }
+  
 
-    public User(String username, int id, String password)
+    public User(String username, String password, int id)
     {
         this.username = username;
         this.id = id;
