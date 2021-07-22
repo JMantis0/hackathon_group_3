@@ -1,11 +1,11 @@
 package com.revature.dtos;
 
-public class UserDTO
+public class CharacterDTO
 {
     private String name;
     private String email;
 
-    public UserDTO(String name, String email)
+    public CharacterDTO(String name, String email)
     {
         this.name = name;
         this.email = email;
@@ -35,8 +35,8 @@ public class UserDTO
     public String toString()
     {
         return "UserDTO{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                       "name='" + name + '\'' +
+                       ", email='" + email + '\'' +
+                       '}';
     }
 }

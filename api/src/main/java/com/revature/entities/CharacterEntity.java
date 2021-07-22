@@ -1,12 +1,9 @@
 package com.revature.entities;
 
-import org.springframework.boot.context.properties.bind.Name;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name="Users")
-public class User
+public class CharacterEntity
 {
     @Column
     private String name;
@@ -18,15 +15,11 @@ public class User
     @GeneratedValue
     private int id;
 
-    public User()
+    public CharacterEntity()
     {
     }
 
-    public User(int id){
-        this.id = id;
-    }
-  
-    public User(String name, String email, int id)
+    public CharacterEntity(String name, String email, int id)
     {
         this.name = name;
         this.email = email;
@@ -67,9 +60,9 @@ public class User
     public String toString()
     {
         return "User{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", id=" + id +
-                '}';
+                       "name='" + name + '\'' +
+                       ", email='" + email + '\'' +
+                       ", id=" + id +
+                       '}';
     }
 }
