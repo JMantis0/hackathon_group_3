@@ -1,8 +1,11 @@
 package com.revature.entities;
 
+import org.springframework.boot.context.properties.bind.Name;
+
 import javax.persistence.*;
 
 @Entity
+@Table(name="Users")
 public class User
 {
     @Column
@@ -19,6 +22,10 @@ public class User
     {
     }
 
+    public User(int id){
+        this.id = id;
+    }
+  
     public User(String name, String email, int id)
     {
         this.name = name;
