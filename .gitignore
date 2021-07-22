@@ -25,12 +25,13 @@ build/*
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-
-build.gradle
-settings.gradle
-gradlew
-gradlew.bat
-application.properties
+api/gradle/*
+api/build.gradle
+api/settings.gradle
+api/gradlew
+api/gradlew.bat
+api/build/*
+api/src/main/resources/*
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

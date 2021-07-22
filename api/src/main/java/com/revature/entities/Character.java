@@ -9,7 +9,7 @@ public class Character {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "userId", referencedColumnName = "id")
+    @JoinColumn(name = "user_id")
     private User user;
 
     private String name;
@@ -36,7 +36,6 @@ public class Character {
         this.physical_damage = physical_damage;
         this.height = height;
         this.weight = weight;
-        this.user = user;
     }
 
     public Character() {
@@ -90,6 +89,14 @@ public class Character {
         return magic_damage;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public void setMagic_damage(double magic_damage) {
         this.magic_damage = magic_damage;
     }
@@ -141,6 +148,7 @@ public class Character {
                 ", physical_damage=" + physical_damage +
                 ", height=" + height +
                 ", weight=" + weight +
+                "userId="+user.getId()+
                 '}';
     }
 }
