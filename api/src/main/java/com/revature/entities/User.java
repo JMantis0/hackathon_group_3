@@ -15,15 +15,15 @@ public class User
     private String email;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
-    public User()
+    public User(){}
+    public User(int id)
     {
-    }
-    public User(int id){
         this.id = id;
     }
+
     public User(String name, String email, int id)
     {
         this.name = name;
