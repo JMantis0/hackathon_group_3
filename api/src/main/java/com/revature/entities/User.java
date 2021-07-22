@@ -21,9 +21,11 @@ public class User
     public User()
     {
     }
+
     public User(int id){
         this.id = id;
     }
+  
     public User(String name, String email, int id)
     {
         this.name = name;
@@ -65,9 +67,9 @@ public class User
     public String toString()
     {
         return "User{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", id=" + id +
-                '}';
+                       "name='" + name + '\'' +
+                       ", email='" + email + '\'' +
+                       ", id=" + id +
+                       '}';
     }
 }
