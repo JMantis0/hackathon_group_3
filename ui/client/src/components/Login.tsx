@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import {LoginDTO} from "../dtos/LoginDTO";
 import {loginApiCall} from "../remotes/login-api-call";
+import {useDispatch} from "react-redux";
+import {login} from "../states/auth-slice";
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
 
-    // const dispatch = useDispatch();
 
     const changeHandler = (e: any) => {
         if (e.target.className === "username-input")
@@ -24,8 +26,8 @@ const Login = () => {
         loginApiCall(credentials).then(data =>
         {
             console.log(data)
+            dispatch(login(data));
         });
-        // dispatch(login(data));
     }
     return (
         <div>
