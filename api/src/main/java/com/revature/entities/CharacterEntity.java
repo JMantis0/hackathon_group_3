@@ -3,7 +3,7 @@ package com.revature.entities;
 import javax.persistence.*;
 
 @Entity
-public class User
+public class CharacterEntity
 {
     @Column
     private String name;
@@ -15,11 +15,11 @@ public class User
     @GeneratedValue
     private int id;
 
-    public User()
+    public CharacterEntity()
     {
     }
 
-    public User(String name, String email, int id)
+    public CharacterEntity(String name, String email, int id)
     {
         this.name = name;
         this.email = email;
