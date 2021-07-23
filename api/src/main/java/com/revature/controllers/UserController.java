@@ -1,32 +1,37 @@
 package com.revature.controllers;
 
-import com.revature.entities.CharacterEntity;
-import com.revature.services.CharacterService;
+import com.revature.entities.User;
 import com.revature.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("user")
-public class RegisterController {
+@RequestMapping("/user")
+public class UserController
+{
+    private static Logger logger = LoggerFactory.getLogger(UserController.class);
+    private UserService userService;
 
-    private final UserService userService;
-
-    @Autowired
-    public UserController(UserService userService){
+    public UserController(UserService userService)
+    {
         this.userService = userService;
     }
 
-    @PostMapping("/add")
-    public CharacterEntity addCharacter(@RequestBody CharacterEntity characterEntity) {
-        return this.characterService.saveCharacter(characterEntity);
+    @GetMapping(produces = "application/json")
+    public User getUser(@RequestParam int id)
+    {
+        logger.info("UserController getUser before service: {}",id);
+        Optional<User> user = userService.findById(id);
+        logger.info("UserController getUser: {}",user.get());
+        return user.get();
     }
 
-    @GetMapping("/user/{id}")
-    public List<CharacterEntity> findByUserId(@PathVariable int id){
-        return characterService.findByUserId(id);
+    @PostMapping("/add")
+    public User addUser(@RequestBody User user) {
+        return this.userService.saveUser(user);
     }
 }
