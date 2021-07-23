@@ -1,9 +1,8 @@
 package main.java.com.revature.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "users")
 public class User
@@ -18,9 +17,10 @@ public class User
     @Column
     private String password;
 
-    public User()
-    {
-    }
+    @OneToMany(mappedBy = "user")
+    private Set<Character> characters;
+
+    public User() {    }
 
     public User(String username, int id, String password)
     {
@@ -59,11 +59,24 @@ public class User
         this.password = password;
     }
 
+    public Set<Character> getCharacters()
+    {
+        return characters;
+    }
+
+    public void setCharacters(Set<Character> characters)
+    {
+        this.characters = characters;
+    }
+
     @Override
     public String toString()
     {
-        return "User{" + "name='" + username + '\'' +
-                       ", id=" + id +
+        return "User{" +
+                       "id=" + id +
+                       ", username='" + username + '\'' +
+                       ", password='" + password + '\'' +
+                       ", characters=" + characters +
                        '}';
     }
 }

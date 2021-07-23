@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("http://localhost:4200")
-@RequestMapping("character")
+@RequestMapping("/character")
 public class CharacterController {
     private final CharacterService characterService;
 

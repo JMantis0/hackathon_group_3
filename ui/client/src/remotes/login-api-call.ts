@@ -1,7 +1,6 @@
 import {LoginDTO} from "../dtos/LoginDTO";
 import axios from "axios";
 
-
 export const loginApiCall = async (props: LoginDTO) =>
 {
     console.log(props);

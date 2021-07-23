@@ -1,14 +1,22 @@
 import React from 'react';
 import './App.css';
 import Login from "./components/Login";
-import {Provider} from "react-redux";
+import {Provider, useSelector} from "react-redux";
 import {store} from "./store/store";
+import {authState} from "./states/auth-slice";
+import UserInfo from "./components/UserInfo";
 
 function App() {
+    let state = useSelector(authState);
   return (
-    <Provider store={store}>
-        <Login />
-    </Provider>
+      <div>
+        <div>
+            {!state.isLoggedIn ? <Login /> : <UserInfo/>}
+            </div>
+        {/*    <div>*/}
+        {/*    {state.isLoggedIn && <UserInfo />}*/}
+        {/*</div>*/}
+      </div>
   );
 }
 

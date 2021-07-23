@@ -2,14 +2,14 @@ package main.java.com.revature.entities;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "characters")
 public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "userId", referencedColumnName = "id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     private String name;
